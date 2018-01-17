@@ -8,3 +8,17 @@
 </p>
 
 ## Getting Started
+
+```csharp
+using ice3x_api;
+```
+
+```csharp
+var client = new Ice3XClient(_privateKey, _publicKey);
+
+var response = await client.GetMarketDepthFullAsync();
+foreach (var getMarketDepthFullEntity in response.Response.Entities)
+{
+    Console.WriteLine(getMarketDepthFullEntity.LastPrice);
+}
+```
