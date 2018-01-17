@@ -2,10 +2,10 @@
 
 namespace ice3x_api
 {
-    public class GetPublicTradeListEntity
+    public class GetOrderListEntity
     {
-        [JsonProperty("trade_id")]
-        public string TradeId { get; set; }
+        [JsonProperty("order_id")]
+        public string OrderId { get; set; }
 
         [JsonProperty("pair_id")]
         public string PairId { get; set; }
@@ -14,10 +14,13 @@ namespace ice3x_api
         public string Type { get; set; }
 
         [JsonProperty("price")]
-        public decimal Price { get; set; }
+        public long Price { get; set; }
 
         [JsonProperty("volume")]
-        public decimal Volume { get; set; }
+        public double Volume { get; set; }
+
+        [JsonProperty("fee_percent")]
+        public long FeePercent { get; set; }
 
         [JsonProperty("created")]
         public string Created { get; set; }

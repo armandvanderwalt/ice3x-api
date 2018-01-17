@@ -54,6 +54,10 @@
     <Compile Include="GetMarketDepthFullResponse.cs" />
     <Compile Include="GetOrderbookInfoEntitiy.cs" />
     <Compile Include="GetOrderbookInfoResponse.cs" />
+    <Compile Include="GetOrderInfoEntity.cs" />
+    <Compile Include="GetOrderInfoResponse.cs" />
+    <Compile Include="GetOrderListEntity.cs" />
+    <Compile Include="GetOrderListResponse.cs" />
     <Compile Include="GetPairInfoEntitiy.cs" />
     <Compile Include="GetPairInfoResponse.cs" />
     <Compile Include="GetPairListEntity.cs" />
@@ -62,6 +66,8 @@
     <Compile Include="GetPublicTradeInfoResponse.cs" />
     <Compile Include="GetPublicTradeListEntity.cs" />
     <Compile Include="GetPublicTradeListResponse.cs" />
+    <Compile Include="GetTransactionListEntity.cs" />
+    <Compile Include="GetTransactionListResponse.cs" />
     <Compile Include="Ice3XClient.cs" />
     <Compile Include="Pagination.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
