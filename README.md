@@ -10,9 +10,15 @@
 
 # Getting Started
 
+## Install
+
+```
+Install-Package ice3x-api
+```
+
 ## Config
 
-```csharp
+```xml
 <add key="Ice3XUrl" value="https://ice3x.com/api/v1/" />
 ```
 
