@@ -7,7 +7,16 @@
     </a>
 </p>
 
-## Getting Started
+
+# Getting Started
+
+## Config
+
+```csharp
+<add key="Ice3XUrl" value="https://ice3x.com/api/v1/" />
+```
+
+## Usage
 
 ```csharp
 using ice3x_api;
@@ -22,3 +31,5 @@ foreach (var getMarketDepthFullEntity in response.Response.Entities)
     Console.WriteLine(getMarketDepthFullEntity.LastPrice);
 }
 ```
+
+
