@@ -216,33 +216,35 @@ namespace ice3x_api
                 }
             }
 
-            var httpClient = new HttpClient();
-
-            var timeStamp = UnixTimeNow();
-            var uri = new Uri(string.Format($"{url}{path}"));
-            var signature = SignMessage(queryString);
-            
-            var requestContent = new FormUrlEncodedContent(keyValueParams);
-
-            var request = new HttpRequestMessage()
+            using (var httpClient = new HttpClient())
             {
-                RequestUri = uri,
-                Method = HttpMethod.Post,
-                Content = requestContent
-            };
+                var timeStamp = UnixTimeNow();
+                var uri = new Uri(string.Format($"{url}{path}"));
+                var signature = SignMessage(queryString);
 
-            request.Headers.Add("accept-charset", "utf-8");
-            request.Headers.Add("sign", signature);
-            request.Headers.Add("key", _publicKey);
-            request.Headers.Add("timestamp", timeStamp.ToString());
-            
-            var response = await httpClient.SendAsync(request);
-            
-            var responseContent = response.Content;
-            
-            using (var reader = new StreamReader(await responseContent.ReadAsStreamAsync()))
-            {
-                return await reader.ReadToEndAsync();
+                var requestContent = new FormUrlEncodedContent(keyValueParams);
+
+                using (var request = new HttpRequestMessage
+                {
+                    RequestUri = uri,
+                    Method = HttpMethod.Post,
+                    Content = requestContent
+                })
+                {
+                    request.Headers.Add("accept-charset", "utf-8");
+                    request.Headers.Add("sign", signature);
+                    request.Headers.Add("key", _publicKey);
+                    request.Headers.Add("timestamp", timeStamp.ToString());
+
+                    var response = await httpClient.SendAsync(request);
+                    
+                    var responseContent = response.Content;
+
+                    using (var reader = new StreamReader(await responseContent.ReadAsStreamAsync()))
+                    {
+                        return await reader.ReadToEndAsync();
+                    }
+                }
             }
         }
         private long UnixTimeNow()

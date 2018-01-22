@@ -86,6 +86,8 @@
     <Compile Include="TradeInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config.transform" />
+    <None Include="web.config.transform.config" />
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
