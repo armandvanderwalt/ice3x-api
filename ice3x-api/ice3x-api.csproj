@@ -50,6 +50,7 @@
     <Compile Include="CancelOrderResponse.cs" />
     <Compile Include="CreateNewOrderEntity.cs" />
     <Compile Include="CreateNewOrderResponse.cs" />
+    <Compile Include="ErrorConverter.cs" />
     <Compile Include="GetBalanceInfoEntity.cs" />
     <Compile Include="GetBalanceInfoResponse.cs" />
     <Compile Include="GetBalanceListResponse.cs" />

@@ -1,8 +1,14 @@
-﻿namespace ice3x_api
+﻿using System.Collections.Generic;
+using Newtonsoft.Json;
+
+namespace ice3x_api
 {
     public class ApiResponse<T> where T : class
     {
-        public bool Errors { get; set; }
+        [JsonConverter(typeof(ErrorConverter<Dictionary<string, string>>))]
+        public Dictionary<string, string> Errors { get; set; }
+
+        [JsonConverter(typeof(ResponseConverter))]
         public T Response { get; set; }
     }
 }
